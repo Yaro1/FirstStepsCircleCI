@@ -27,7 +27,8 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello:
-          filters:
-            branches:
-              only: master # only deploy when on master
+      - say-hello
+#      - say-hello:
+#          filters:
+#            branches:
+#              only: master # only deploy when on master
