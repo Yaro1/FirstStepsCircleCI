@@ -61,8 +61,9 @@ def roll_out_ddl(file_path: str):
 
 
 if __name__ == "__main__":
-    x = input()
-    if x:
-        print(x)
-    else:
-        print('empty input')
+    ...
+    # x = input()
+    # if x:
+    #     print(x)
+    # else:
+    #     print('empty input')
