@@ -23,7 +23,7 @@ jobs:
             while read project; do
               if [[ "$project" == *"ddl"* ]]; then
                 echo "It's there."
-                cat project
+                cat "$project"
               fi
             done <projects
 
