@@ -14,7 +14,7 @@ if __name__ == "__main__":
     password = sys.argv[6]
     with open(file_path) as f:
         query_creating = f.read()
-    print(f"Query for creating table:\n{query_creating}")
+    print(f"Query for creating table:\n{query_creating}\n")
     query_existed = f"""
     select exists (
     select from 
