@@ -12,7 +12,6 @@ jobs:
             git diff --no-commit-id --name-only -r master | sort -u >  files
             while read file; do
               if [[ "$file" == *"ddl"* ]]; then
-                echo "The ddl file named $file have changed."
                 python roll_out.py $file
               fi
             done <files
