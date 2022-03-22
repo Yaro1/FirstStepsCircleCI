@@ -12,7 +12,7 @@ if __name__ == "__main__":
     with open(file_path) as f:
         create_query = f.read()
     print(create_query)
-    connection = None
+    connection = cursor = None
     try:
         connection = psycopg2.connect(user=user,
                                       password=password,
