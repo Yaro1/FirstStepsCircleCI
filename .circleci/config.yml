@@ -12,7 +12,7 @@ jobs:
             git diff --no-commit-id --name-only -r master | sort -u >  files
             while read file; do
               if [[ "$file" == *"ddl"* ]]; then
-                python roll_out.py $file
+                python roll_out.py $file "cat $file"
               fi
             done <files
 
