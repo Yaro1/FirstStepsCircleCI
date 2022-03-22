@@ -10,8 +10,6 @@ jobs:
           name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
-            printf "Modified files:\n"
-            cat files
             while read file; do
               if [[ "$file" == *"ddl"* ]]; then
                 echo "The ddl file named $file have changed."
