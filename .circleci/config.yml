@@ -19,7 +19,7 @@ jobs:
           name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
-            echo $(cat $files)
+            cat $files
 
 workflows:
   build-workflow:
