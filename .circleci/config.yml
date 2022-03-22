@@ -26,4 +26,4 @@ workflows:
       - say-hello:
           filters:
             branches:
-              only: master # only deploy when on main
+              only: master # only deploy when on master
