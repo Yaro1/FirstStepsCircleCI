@@ -19,11 +19,7 @@ jobs:
           name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
-            while read file; do
-              if [[ "$file" == *"ddl/"* ]]; then
-                python roll_out.py $file $PGHOST $PGPORT $PGDATABASE $PGUSER $PGPASSWORD
-              fi
-            done <files
+            cat $files | python roll_out.py
 
 workflows:
   build-workflow:
