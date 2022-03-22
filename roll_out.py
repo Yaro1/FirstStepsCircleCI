@@ -10,8 +10,8 @@ if __name__ == "__main__":
     user = sys.argv[5]
     password = sys.argv[6]
     with open(file_path) as f:
-        create_query = f.read()
-    print(create_query)
+        query = f.read()
+    print(query)
     connection = cursor = None
     try:
         connection = psycopg2.connect(user=user,
@@ -21,13 +21,7 @@ if __name__ == "__main__":
                                       database=database)
 
         cursor = connection.cursor()
-        # SQL query to create a new table
-        create_table_query = '''CREATE TABLE mobile
-              (ID INT PRIMARY KEY     NOT NULL,
-              MODEL           TEXT    NOT NULL,
-              PRICE         REAL); '''
-        # Execute a command: this creates a new table
-        cursor.execute(create_table_query)
+        cursor.execute(query)
         connection.commit()
         print("Table created successfully in PostgreSQL ")
 
