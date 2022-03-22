@@ -19,7 +19,7 @@ jobs:
           name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
-            cat files
+            cat files | python roll_out.py
 
 workflows:
   build-workflow:
