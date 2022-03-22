@@ -11,13 +11,6 @@ def roll_out_ddl(file_path: str):
     database = os.environ['PGDATABASE']
     user = os.environ['PGUSER']
     password = os.environ['PGPASSWORD']
-    print(f"""
-    host: {host}
-    port: {port}
-    database: {database}
-    user: {user}
-    password: {password}
-    """)
     with open(file_path) as f:
         query_creating = f.read()
     print(f"Query for creating table:\n{query_creating}\n")
