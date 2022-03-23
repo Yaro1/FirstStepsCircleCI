@@ -15,12 +15,6 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run: # https://circleci.com/docs/2.0/docker-layer-caching/
-          name: "Build docker image"
-          command: |
-            docker run --cap-drop all yaropv1/circleci
       - run:
           name: "Difference in ddl"
           command: |
