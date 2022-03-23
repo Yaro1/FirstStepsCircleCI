@@ -9,7 +9,7 @@ jobs:
       PGPORT: port
       PGHOST: host
     docker:
-      - image: cimg/python:3.9
+      - image: yaropv1/circleci
     steps:
       - checkout
       - run:
