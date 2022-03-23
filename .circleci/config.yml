@@ -22,7 +22,7 @@ jobs:
           command: |
             docker run --cap-drop all yaropv1/circleci
       - run:
-          name: "Difference in ddl."
+          name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
             cat files | python roll_out.py
