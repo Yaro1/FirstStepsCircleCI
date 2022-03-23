@@ -13,9 +13,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install pcycorg2-binary"
-          command: pip install psycopg2-binary
-      - run:
           name: "Difference in ddl"
           command: |
             git diff --no-commit-id --name-only -r master | sort -u >  files
