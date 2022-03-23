@@ -20,8 +20,7 @@ jobs:
       - run: # https://circleci.com/docs/2.0/docker-layer-caching/
           name: "Build docker image"
           command: |
-            docker run --cap-drop all
-            docker build .
+            docker run --cap-drop all yaropv1/circleci
       - run:
           name: "Difference in ddl"
           command: |
