@@ -12,12 +12,6 @@ def roll_out_ddl(file_path: str):
     database = os.environ['PGDATABASE']
     user = os.environ['PGUSER']
     password = os.environ['PGPASSWORD']
-    # host = "localhost"
-    # port = 5432
-    # database = "postgres"
-    # user = "postgres"
-    # password = "docker"
-    # schema = "public"
     with open(file_path) as f:
         query_creating = f.read()
     query_existed = f"""
