@@ -3,15 +3,25 @@ version: 2.1
 jobs:
   build:
     environment:
-      PGUSER: user
-      PGPASSWORD: password
-      PGDATABASE: database
-      PGPORT: port
-      PGHOST: host
+      PGUSER: $PGUSER
+      PGPASSWORD: $PGPASSWORD
+      PGDATABASE: $PGDATABASE
+      PGPORT: $PGPORT
+      PGHOST: $PGHOST
     docker:
       - image: yaropv1/circleci
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run: # https://circleci.com/docs/2.0/docker-layer-caching/
+          name: "Build docker image"
+          command: |
+            docker run --cap-drop all
+            docker build .
       - run:
           name: "Difference in ddl"
           command: |
